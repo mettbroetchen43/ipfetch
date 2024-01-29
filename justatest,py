@@ -1,0 +1,10 @@
+def nl(count):
+    for i in range(count):
+        print("Hallo")
+
+def main():
+    nl(1)
+
+if __name__ == '__main__':
+    main()
+
