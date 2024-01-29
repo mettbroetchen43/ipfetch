@@ -20,6 +20,7 @@ def get_ip_info(url):
             print(f"Fehler beim Abrufen der Daten. Statuscode: {response.status_code}")
     except requests.RequestException as e:
         print(f"Fehler bei der Anfrage: {e}")
+        print("Bitte prüfen Sie Ihre Internetverbindung.")
 
 def nl(count):
     '''Prints specified number of new lines.
