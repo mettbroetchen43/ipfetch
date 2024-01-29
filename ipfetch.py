@@ -1,6 +1,8 @@
 import requests
 import json
 
+from version import getVersion as gv 
+
 # URL für die IPv4 API (4.myip.is)
 ipv4_url = 'https://4.myip.is/'
 
@@ -33,6 +35,10 @@ def nl(count):
     else:
         pass
     
+
+# Willkommensnachricht
+print (f"Willkommen bei ipfetch, Version {gv()}")
+nl(1)
 
 # Abrufen und Parsen der Daten von der IPv4-API
 ipv4_data = get_ip_info(ipv4_url)
