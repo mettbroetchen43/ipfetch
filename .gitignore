@@ -1,1 +1,6 @@
 justatest.py
+build/
+dist/
+build\\
+dist\\
+
