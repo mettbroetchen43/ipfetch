@@ -22,13 +22,17 @@ def get_ip_info(url):
 def nl(count):
     '''Prints specified number of new lines.
        You should use Integer Values.'''
-    try:
-        for i in range(count):
-            print()
-    except TypeError as e:
-        print(f"{count} is not a valid value! Use integers!")
-        print(f"Error: {e}")
-        raise
+    if count > 0:
+        try:
+            for i in range(count):
+                print()
+        except TypeError as e:
+            print(f"{count} is not a valid value! Use integers!")
+            print(f"Error: {e}")
+            raise
+    else:
+        pass
+    
 
 # Abrufen und Parsen der Daten von der IPv4-API
 ipv4_data = get_ip_info(ipv4_url)
