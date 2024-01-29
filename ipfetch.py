@@ -19,15 +19,16 @@ def get_ip_info(url):
     except requests.RequestException as e:
         print(f"Fehler bei der Anfrage: {e}")
 
-def nl():
-    print()
+def nl(count):
+    for i in range(count):
+        print()
 
 # Abrufen und Parsen der Daten von der IPv4-API
 ipv4_data = get_ip_info(ipv4_url)
 if ipv4_data:
     print("Daten von IPv4-API")
     print("==================")
-    nl()
+    nl(1)
     print(f"IP-Adresse : {ipv4_data['ip']}")
     print(f"Host       : {ipv4_data['host']}")
     print(f"Timestamp  : {ipv4_data['timestamp']}")
@@ -35,10 +36,10 @@ if ipv4_data:
 # Abrufen und Parsen der Daten von der IPv6-API
 ipv6_data = get_ip_info(ipv6_url)
 if ipv6_data:
-    nl()
+    nl(1)
     print("Daten von IPv6-API")
     print("==================")
-    nl()
+    nl(1)
     print(f"IP-Adresse : {ipv6_data['ip']}")
     print(f"Host       : {ipv6_data['host']}")
     print(f"Timestamp  : {ipv6_data['timestamp']}")
