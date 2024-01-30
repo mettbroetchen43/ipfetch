@@ -1,7 +1,5 @@
 justatest.py
 build/
 dist/
-build\\
-dist\\
 __pycache__/
 *.spec
