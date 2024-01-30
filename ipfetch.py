@@ -3,13 +3,13 @@ import json
 
 from version import getVersion as gv 
 
-# URL für die IPv4 API (4.myip.is)
+# URL for IPv4 API (4.myip.is)
 ipv4_url = 'https://4.myip.is/'
 
-# URL für die IPv6 API (6.myip.is)
+# URL for IPv6 API (6.myip.is)
 ipv6_url = 'https://6.myip.is/'
 
-# Funktion zum Abrufen und Parsen der JSON-Daten von der URL
+# Method for calling and parsing JSON-data of given URL
 def get_ip_info(url):
     try:
         response = requests.get(url)
@@ -17,10 +17,10 @@ def get_ip_info(url):
             parsed_json = response.json()
             return parsed_json
         else:
-            print(f"Fehler beim Abrufen der Daten. Statuscode: {response.status_code}")
+            print(f"Error while getting Data. Statuscode: {response.status_code}")
     except requests.RequestException as e:
-        print(f"Fehler bei der Anfrage: {e}")
-        print("Bitte prüfen Sie Ihre Internetverbindung.")
+        print(f"Error on request: {e}")
+        print("Please check your internet connection.")
 
 def nl(count):
     '''Prints specified number of new lines.
@@ -37,27 +37,27 @@ def nl(count):
         pass
     
 
-# Willkommensnachricht
-print (f"Willkommen bei ipfetch, Version {gv()}")
+#Welcome Message
+print (f"Welcome to ipfetch, Version {gv()}")
 nl(1)
 
-# Abrufen und Parsen der Daten von der IPv4-API
+# Getting and parsing Data of IPv4-API
 ipv4_data = get_ip_info(ipv4_url)
 if ipv4_data:
-    print("Daten von IPv4-API")
-    print("==================")
+    print("IPv4")
+    print("====")
     nl(1)
-    print(f"IP-Adresse : {ipv4_data['ip']}")
+    print(f"IP-Adress  : {ipv4_data['ip']}")
     print(f"Host       : {ipv4_data['host']}")
     print(f"Timestamp  : {ipv4_data['timestamp']}")
 
-# Abrufen und Parsen der Daten von der IPv6-API
+# Getting and parsing Data of IPv6-API
 ipv6_data = get_ip_info(ipv6_url)
 if ipv6_data:
     nl(1)
-    print("Daten von IPv6-API")
-    print("==================")
+    print("IPv6")
+    print("====")
     nl(1)
-    print(f"IP-Adresse : {ipv6_data['ip']}")
+    print(f"IP-Adress  : {ipv6_data['ip']}")
     print(f"Host       : {ipv6_data['host']}")
     print(f"Timestamp  : {ipv6_data['timestamp']}")
