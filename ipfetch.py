@@ -9,9 +9,21 @@ ipv4_url = 'https://4.myip.is/'
 # URL for IPv6 API (6.myip.is)
 ipv6_url = 'https://6.myip.is/'
 
+from os import system as sys, name
+
+def clear():
+    '''Clears the screen'''
+    if name == "nt":
+         _ = sys("cls")
+    if name == "posix":
+         _ = sys("clear")
+
+    
+
+
 # Method for calling and parsing JSON-data of given URL
 def get_ip_info(url):
-    """Calls the specified URL and parses the JSON data.
+    '''Calls the specified URL and parses the JSON data.
 
     Args:
         url (str): The URL to call.
@@ -21,17 +33,17 @@ def get_ip_info(url):
 
     Raises:
         requests.RequestException: If an error occurs during the request.
-    """
+    '''
     try:
         response = requests.get(url)
         if response.status_code == 200:
-            parsed_json = response.json()
-            return parsed_json
+                parsed_json = response.json()
+                return parsed_json
         else:
-            print(f"Error while getting Data. Statuscode: {response.status_code}")
+                print(f"Error while getting Data. Statuscode: {response.status_code}")
     except requests.RequestException as e:
-        print(f"Error on request: {e}")
-        print("Please check your internet connection.")
+            print(f"Error on request: {e}")
+            print("Please check your internet connection.")
 
 def nl(count):
     '''Prints specified number of new lines.
@@ -47,7 +59,7 @@ def nl(count):
     else:
         pass
     
-
+clear()
 #Welcome Message
 print (f"Welcome to ipfetch, Version {gv()}")
 nl(1)
