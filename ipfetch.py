@@ -11,7 +11,7 @@ ipv6_url = 'https://6.myip.is/'
 
 # Method for calling and parsing JSON-data of given URL
 def get_ip_info(url):
-     """Calls the specified URL and parses the JSON data.
+    """Calls the specified URL and parses the JSON data.
 
     Args:
         url (str): The URL to call.
