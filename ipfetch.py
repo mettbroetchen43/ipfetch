@@ -1,6 +1,8 @@
 import requests
 from os import system, name
 from version import getVersion as gv
+import json
+
 
 # URLs for IPv4 and IPv6 APIs
 ipv4_url = 'https://4.myip.is/'
